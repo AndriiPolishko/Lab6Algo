@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/cardStyles.css">
+    <link rel="stylesheet" href = ./css/styles.css>
+    <link rel="stylesheet" href="./css/choose%20players.css">
+    <title>The Rich Man</title>
+</head>
+<body>
+    <div class = "chooseNumberOfPlayers">
+        <h1>Choose Number Of Players</h1>
+        <div class="variants">
+            <button class="chooseNum" id = "2">2</button>
+            <button class="chooseNum" id = "3">3</button>
+            <button class="chooseNum" id = "4">4</button>
+            <button class="chooseNum" id = "5">5</button>
+            <button class="chooseNum" id = "6">6</button>
+        </div>
+        <!--<button class="start">START</button>-->
+    </div>
+    <div class="outer-box hidden">
+
+        <div class="cur_player" style="font-size:2vh ">Current player: </div>
+
+        <div class ="inner-box">
+
+            <div class="second_player"></div>
+
+           <!-- <div class="third_player"><img src="./img/deck.png"></div>
+
+            <div class = "table_center">
+                <button>Choose who will start</button>
+            </div>
+
+            <div class="fourth_player"><img src="./img/deck.png"></div>-->
+
+            <div class="human_player">
+                <div class="deck"></div>
+            </div>
+
+        </div>
+    </div>
+<script src = js/index.js type="module"></script>
+
+</body>
+</html>
