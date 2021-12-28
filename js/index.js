@@ -5,10 +5,16 @@ ai.setAttribute('disabled','true')
 
 let human = document.querySelector(".human")
 
-let cardsInFirstDeck = []
+let deck1 = document.querySelector(".deck1")
+let deck2 = document.querySelector(".deck2")
+
+let whoWon = 0;
+
 $(human).on('click','.card',function(e){
     let card = e.target
-    replace_card(card)})
+    ai_move(card)
+    replace_card(card)
+   })
 
 
 let all_cards = [];
@@ -82,8 +88,11 @@ start.addEventListener('click',()=> {
     divideCards(all_cards,players_cards,ai_cards)
     appendDeck(human,players_cards)
     appendDeck(ai,ai_cards)
-    console.log(players_cards)
-    console.log(human.children)
+    players_cards=[]
+    ai_cards= []
+    all_cards=[]
+/*    console.log(players_cards)
+    console.log(human.children)*/
 })
 
 
@@ -127,20 +136,73 @@ function appendDeck(parent,deck) {
 
 function replace_card(card) {
 
-    let deck1 = document.querySelector(".deck1")
+
     deck1.innerHTML="";
     deck1.appendChild(card);
+    let flag
     checkWinner()
+    if(ai.innerHTML==="." &&human.innerHTML===".") {
+        ai.innerHTML=""
+        human.innerHTML="."
+
+    }
 
 }
 
 function checkWinner() {
-    if(human.innerHTML==="")
-        alert("You Win")
+    if(human.innerHTML==="") {
+        alert("You Won")
+        ai.innerHTML="."
+        start.removeAttribute("disabled")
+    }
+
+    if(ai.innerHTML==="") {
+        alert("Computer Won")
+        human.innerHTML="."
+        start.removeAttribute("disabled")
+    }
+
 }
 
 function ai_move(pCard) {
-    let pCopy = pCard.cloneNode(true,true)
-    let pNum = +pCopy.id["0"]
-    let elem = $("#");
+    deck2.innerHTML=""
+    let aiCard;
+    let pNum = pCard.id[0]
+    let index_of_players_card = ranks.indexOf(pNum);
+    let possible_cards_ranks = ranks.slice(index_of_players_card+1)
+    let possible_cards = [];
+    for(let i = 0; i < possible_cards_ranks.length; i++) {
+        for(let j = 0; j < suits.length; j++) {
+            let temp=possible_cards_ranks[i]+suits[j]
+            possible_cards.push(temp)
+
+        }
+    }
+
+    let n = ai.childElementCount
+    for(let i = 0; i< possible_cards.length-1; i++) {
+        let temp = document.getElementById(`${possible_cards[i]}`)
+        if(temp!=null) {
+            if(temp.parentNode.classList.contains("player2")) {
+                //aiCard=temp;
+                deck2.appendChild(temp)
+                break;
+            }
+        }
+    else {
+        deck1.innerHTML=""
+        }
+
+    }
+    /*while(true) {
+        let k = 0;
+
+        //console.log(document.getElementById(`${possible_cards[k]}`).parentNode)
+        if(k<=n) {
+            break;
+        }
+        k++;
+
+    }*/
+
 }
