@@ -79,6 +79,8 @@ for (let i = 0; i < cardsData.length; i++) {
 }
 
 start.addEventListener('click',()=> {
+    deck1.innerHTML=""
+    deck2.innerHTML=""
     start.setAttribute("disabled","true")
     cardsData.forEach((i) => {
     const card = createCard(i);
