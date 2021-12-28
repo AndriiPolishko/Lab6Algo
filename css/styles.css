@@ -65,7 +65,7 @@ body {
     border: 0.4vh solid black;
 }
 .human_player {
-    width: 100%;
+    width: 50%;
     height: 100%;
     background-color: var(--medium-gray);
     grid-area: d;
