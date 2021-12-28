@@ -1,0 +1,87 @@
+:root {
+    --the-lightest-gray: rgb(194, 194, 194);
+    --light-gray: rgb(131, 133, 136);
+    --medium-gray: rgb(60, 63, 65);
+    --dark-gray: rgb(43, 43, 44);
+}
+* {
+    font-family: 'Poppins', sans-serif;
+
+}
+body {
+    background-color: var(--medium-gray);
+}
+
+.wrap {
+    display: flex;
+
+    height:95vh;
+    width:99%;
+    background-color: var(--light-gray);
+    border: 1px solid black;
+
+}
+
+.log {
+    height: 90vh;
+    width: 15%;
+    margin:5px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+}
+
+.start {
+    margin:5px;
+    height: 10%;
+    width: 90%;
+    background-color: var(--the-lightest-gray);
+}
+
+.deck1,.deck2 {
+    margin: 5px;
+    height: 40%;
+    width: 90%;
+    border: 1px solid black;
+}
+
+.table {
+    height: 90vh;
+    margin:5px;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: var(--medium-gray);
+}
+
+
+
+.human,.player2 {
+    background-color: var(--dark-gray);
+    margin: 5px;
+    height: 48%;
+    width: 97%;
+    border: 1px solid black;
+    display: flex;
+}
+
+.player2 .card{
+    background-color: black;
+    border: 1px solid white;
+}
+
+.card {
+    width: 5em;
+    height: 7em;
+    background-color: #ffffff;
+    box-shadow: 0 0.0625em 0.125em rgba(0, 0, 0, 0.15);
+    border-radius: 0.25em;
+}
+.winner{
+    margin-bottom: 50%;
+    color: white;
+    border: 3px solid white;
+}
