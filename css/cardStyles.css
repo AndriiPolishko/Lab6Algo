@@ -1,0 +1,13 @@
+.card {
+    width: 5%;
+    height: 7%;
+    background-color: #ffffff;
+    box-shadow: 0 0.0625em 0.125em rgba(0, 0, 0, 0.15);
+    border-radius: 0.25em;
+}
+.deck{
+    display: inherit;
+    width: 90%;
+    height: 90%;
+
+}
